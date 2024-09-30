@@ -2,11 +2,12 @@ import React from 'react';
 
 const ContactSection = () => {
   return (
-    <div className="h-[600px] bg-cover bg-center flex items-center justify-center" style={{ backgroundImage: "url('/path-to-your-image.jpg')" }}>
-      <div className="text-white text-center">
-        <h1 className="text-5xl font-bold mb-4">Welcome to Our Services</h1>
-        <p className="text-lg">Providing top-notch logistics solutions for your business.</p>
-      </div>
+    <div className="bg-blue-50 py-12 text-center">
+      <h2 className="text-3xl font-semibold mb-4">Get in Touch</h2>
+      <p className="mb-6">Contact us for more information about our services.</p>
+      <button className="bg-blue-500 px-6 py-3 text-white rounded-md hover:bg-blue-600">
+        Contact Us
+      </button>
     </div>
   );
 };
