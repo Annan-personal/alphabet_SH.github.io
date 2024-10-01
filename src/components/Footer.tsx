@@ -49,7 +49,7 @@ function Footer() {
 
                 {/* Bottom Section */}
                 <div className="mt-8 border-t border-gray-700 pt-4 text-center">
-                    <p>&copy; {new Date().getFullYear()} ALPHABET. All Rights Reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} ALPHABET. All Rights Reserved. Desgined by Annan Zhang.</p>
                 </div>
             </div>
         </footer>

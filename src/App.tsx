@@ -5,6 +5,7 @@ import NavPic from './components/NavigationPicture'
 import ServicesSection from './components/ServiceSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const HomePage: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage: React.FC = () => {
       <NavPic />
       <ServicesSection />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
