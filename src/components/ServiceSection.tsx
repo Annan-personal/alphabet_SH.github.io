@@ -18,7 +18,7 @@ const services = [
     }
 ];
 
-const ServicesSection: React.FC = () => {
+function ServicesSection() {
     return (
         <div className="py-12 bg-gray-100">
             <h2 className="text-3xl text-center font-bold mb-8">OUR SERVICES</h2>

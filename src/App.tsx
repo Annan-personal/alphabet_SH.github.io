@@ -3,7 +3,8 @@ import React from 'react';
 import NavBar from './components/NavigationBar';
 import NavPic from './components/NavigationPicture'
 import ServicesSection from './components/ServiceSection';
-import ContactSection from './components/ContactSection'
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 const HomePage: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage: React.FC = () => {
       <NavBar />
       <NavPic />
       <ServicesSection />
+      <Footer />
     </div>
   );
 };
