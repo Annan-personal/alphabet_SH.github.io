@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Footer() {
+    // const [condition, setCondition] = useState(true);
     const companyIntro = "Alphabet patented modular structure ecosystem aligns the requirements of wholesalers, retailers, and installers, providing a framework dedicated to mutual success and customer contentment.";
 
     return (
         <footer className="bg-gray-800 text-white py-8">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row md:justify-between gap-4 items-start">  {/* Changed items-center to items-start */}
-                    
+
                     {/* Company Logo */}
                     <div className="flex justify-center md:justify-start">
-                        <img src="/LOGO_transparent.png" alt="Company Logo" className="h-12 w-auto" />  {/* Reduced logo size */}
+                        <img src="/LOGO_transparent.png" alt="Company Logo" className="h-12 w-auto" style={{ filter: 'brightness(100)' }} />  {/* Reduced logo size */}
                     </div>
-                    
+
                     {/* Company Info */}
                     <div className="text-center md:text-left md:w-1/3">
                         <h3 className="text-lg font-semibold mb-4">About Us</h3>

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.background-map {
+  background-image: url('/path-to-your-map.svg');
+  background-size: cover;       /* This makes sure the SVG covers the entire element */
+  background-position: center;  /* Centers the SVG */
+  background-repeat: no-repeat; /* Avoid repeating the background */
+  height: 100vh;                /* Full viewport height */
+}

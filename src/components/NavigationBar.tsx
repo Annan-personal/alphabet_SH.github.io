@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [navbarBg, setNavbarBg] = useState(false);
@@ -22,20 +23,25 @@ function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                navbarBg ? 'bg-gray-800 text-white shadow-lg' : 'bg-transparent text-black'
-            }`}
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navbarBg ? 'bg-gray-800 text-white shadow-lg' : 'bg-transparent text-black'
+                }`}
         >
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                {/* Logo */}
-                <img src="/LOGO_transparent.png" alt="Company Logo" className="h-12 w-auto" />
+
+                {/* Logo - ensure logo is visible on both transparent and dark backgrounds */}
+                <img
+                    src="/LOGO_transparent.png"
+                    alt="Company Logo"
+                    className="h-12 w-auto"
+                    style={{ filter: navbarBg ? 'brightness(100)' : 'none' }} // Optional: darken logo on transparent background
+                />
 
                 {/* Navigation Links */}
                 <ul className="flex space-x-6 font-bold">
-                    <li><a href="#home" className="hover:text-blue-300">Home</a></li>
-                    <li><a href="#services" className="hover:text-blue-300">Services</a></li>
-                    <li><a href="#about" className="hover:text-blue-300">About</a></li>
-                    <li><a href="#contact" className="hover:text-blue-300">Contact</a></li>
+                    <li><Link to="/" className="hover:text-blue-300">Home</Link></li>
+                    <li><Link to="/services" className="hover:text-blue-300">Services</Link></li>
+                    <li><Link to="/about" className="hover:text-blue-300">About</Link></li>
+                    <li><Link to="/contact" className="hover:text-blue-300">Contact</Link></li>
                 </ul>
             </div>
         </nav>
