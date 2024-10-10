@@ -4,17 +4,17 @@ const services = [
     {
         title: 'PVDF powder coated aluminum plate',
         description: 'Alphabet owns manufacturing base in China AkzoNobel certified coating base, 10+, 20+, 30+ years commitment the Asia biggest CANAS laboratory supporting long-term strategic partnership with China top 5 aluminum sheet manufacturing enterprises',
-        bgImage: `${process.env.PUBLIC_URL}/section1.jpg`,
+        bgImage: `${process.env.PUBLIC_URL}/Section1.jpg`,
     },
     {
         title: 'SS mesh wire',
         description: 'Our stainless-steel mesh wire recognized in Australia and Canada market meet 8000+ hours neutral salt spray test ASTM B117-11 Pass cyclic salt FogUV exposure test ASTM D 5894-05 Over Knife shear test requirement Create a personalized outdoor living experience.',
-        bgImage: `${process.env.PUBLIC_URL}/section2.jpg`,
+        bgImage: `${process.env.PUBLIC_URL}/Section2.jpg`,
     },
     {
         title: 'Extrusion aluminum material',
         description: 'The simplicity of operation is the core of a carefully planned design Alphabet standardize as an unmatched new standard Unique structure for your special requirements IATF16949 automotive quality control system',
-        bgImage: `${process.env.PUBLIC_URL}/section3.jpg`,
+        bgImage: `${process.env.PUBLIC_URL}/Section3.jpg`,
     }
 ];
 
