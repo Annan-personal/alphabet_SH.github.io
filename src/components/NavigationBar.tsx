@@ -30,7 +30,7 @@ function Navbar() {
 
                 {/* Logo - ensure logo is visible on both transparent and dark backgrounds */}
                 <img
-                    src="/LOGO_transparent.png"
+                    src={`${process.env.PUBLIC_URL}/LOGO_transparent.png`}
                     alt="Company Logo"
                     className="h-12 w-auto"
                     style={{ filter: navbarBg ? 'brightness(100)' : 'none' }} // Optional: darken logo on transparent background

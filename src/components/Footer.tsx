@@ -11,7 +11,7 @@ function Footer() {
 
                     {/* Company Logo */}
                     <div className="flex justify-center md:justify-start">
-                        <img src="/LOGO_transparent.png" alt="Company Logo" className="h-12 w-auto" style={{ filter: 'brightness(100)' }} />  {/* Reduced logo size */}
+                        <img src={`${process.env.PUBLIC_URL}/LOGO_transparent.png`} alt="Company Logo" className="h-12 w-auto" style={{ filter: 'brightness(100)' }} />  {/* Reduced logo size */}
                     </div>
 
                     {/* Company Info */}
@@ -42,7 +42,7 @@ function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2 justify-center md:justify-start hover:text-blue-300"
                         >
-                            <img src="/LinkedIn_LOGO.png" alt="LinkedIn" className="h-4 w-auto" />
+                            <img src={`${process.env.PUBLIC_URL}/LinkedIn_LOGO.png`} alt="LinkedIn" className="h-4 w-auto" />
                             <span>LinkedIn</span>
                         </a>
                     </div>
