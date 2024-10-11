@@ -38,10 +38,10 @@ function Navbar() {
 
                 {/* Navigation Links */}
                 <ul className="flex space-x-6 font-bold">
-                    <li><Link to="/" className="hover:text-blue-300">Home</Link></li>
-                    <li><Link to="/services" className="hover:text-blue-300">Services</Link></li>
-                    <li><Link to="/about" className="hover:text-blue-300">About</Link></li>
-                    <li><Link to="/contact" className="hover:text-blue-300">Contact</Link></li>
+                    <li><Link to="/" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Home</Link></li>
+                    <li><Link to="/services" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Services</Link></li>
+                    <li><Link to="/about" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>About</Link></li>
+                    <li><Link to="/contact" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Contact</Link></li>
                 </ul>
             </div>
         </nav>
