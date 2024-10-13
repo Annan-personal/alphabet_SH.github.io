@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavigationBar';
 import NavPic from './components/NavigationPicture';
 import ServicesSection from './components/ServiceSection';
+import ServicesSection2 from './components/ServiceSection2';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
