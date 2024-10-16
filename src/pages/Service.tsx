@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import ImageGridWithParagraph from '../components/ImageGridWithParagraph';
 import section1_1 from '../resources/Section1-1.jpg';
 import section1_2 from '../resources/Section1-2.jpg';
 import section1_3 from '../resources/Section1-3.jpg';
+import section2_1 from '../resources/Section2-1.jpg';
+import section2_2 from '../resources/Section2-2.jpg';
+import section2_3 from '../resources/Section2-3.jpg';
 
 function ServicesPage() {
-  const [animate, setAnimate] = useState(false);
+  const para1 = "We pride ourselves on delivering top-notch services in various industries. From innovative solutions to reliable manufacturing practices, our team ensures that every client receives the highest quality service.";
+  const para2 = "Our stainless-steel mesh wire recognized in Australia and Canada market meet 8000+ hours neutral salt spray test ASTM B117-11 Pass cyclic salt FogUV exposure test ASTM D 5894-05 Over Knife shear test requirement Create a personalized outdoor living experience.";
 
-  // Trigger animation after a slight delay
-  useEffect(() => {
-    const timer = setTimeout(() => setAnimate(true), 100);
-    return () => clearTimeout(timer); // Cleanup timer on unmount
-  }, []);
+  const [firstSectionVisible, setFirstSectionVisible] = useState(true);
+  const [secondSectionVisible, setSecondSectionVisible] = useState(false);
 
-  // scroll to top
+  const secondSectionRef = useRef<HTMLDivElement | null>(null);
+
+  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -20,50 +24,56 @@ function ServicesPage() {
     });
   }, []);
 
-  return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="grid grid-cols-2 gap-4 max-w-5xl mx-auto px-6">
-        {/* Left Large Image */}
-        <div
-          className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 ${
-            animate ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-          }`}
-          style={{ maxHeight: '500px' }} // Set maximum height for the large image
-        >
-          <img
-            src={section1_1}
-            alt="Section 1"
-            className="w-full h-full object-cover"
-          />
-        </div>
+  // Observe when the second section enters the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSecondSectionVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
 
-        {/* Right Side: Two Smaller Images */}
-        <div className="grid grid-rows-2 gap-4">
-          <div
-            className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 delay-100 ${
-              animate ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'
-            }`}
-            style={{ maxHeight: '240px' }} // Set maximum height for the first small image
-          >
-            <img
-              src={section1_2}
-              alt="Section 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div
-            className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 delay-200 ${
-              animate ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-            }`}
-            style={{ maxHeight: '240px' }} // Set maximum height for the second small image
-          >
-            <img
-              src={section1_3}
-              alt="Section 3"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+    if (secondSectionRef.current) {
+      observer.observe(secondSectionRef.current);
+    }
+
+    return () => {
+      if (secondSectionRef.current) {
+        observer.unobserve(secondSectionRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gray-100">
+      {/* First Image Grid with Paragraph */}
+      <ImageGridWithParagraph
+        images={[
+          { src: section1_1, alt: 'Section 1-1' },
+          { src: section1_2, alt: 'Section 1-2' },
+          { src: section1_3, alt: 'Section 1-3' },
+        ]}
+        paragraph={para1}
+        triggerAnimation={firstSectionVisible} // First section always visible
+      />
+
+      {/* Second Image Grid with Paragraph, with scroll animation */}
+      <div ref={secondSectionRef}>
+        <ImageGridWithParagraph
+          images={[
+            { src: section2_1, alt: 'Section 2-1' },
+            { src: section2_2, alt: 'Section 2-2' },
+            { src: section2_3, alt: 'Section 2-3' },
+          ]}
+          paragraph={para2}
+          triggerAnimation={secondSectionVisible} // Trigger animation when second section becomes visible
+        />
       </div>
     </div>
   );
