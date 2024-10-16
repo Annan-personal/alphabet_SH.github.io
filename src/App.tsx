@@ -5,6 +5,7 @@ import NavPic from './components/NavigationPicture';
 import ServicesSection from './components/ServiceSection';
 import ServicesSection2 from './components/ServiceSection2';
 import ContactSection from './components/ContactSection';
+import ServicesPage from './pages/Service';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
@@ -30,7 +31,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
 
