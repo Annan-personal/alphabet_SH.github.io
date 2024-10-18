@@ -12,7 +12,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 // Pages
 import Services from './pages/Service';
 import About from './pages/About';
-import Contact from './pages/Contact';
+import ContactPage from './pages/Contact';
 
 const HomePage: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactPage />} />
 
         </Routes>
 
