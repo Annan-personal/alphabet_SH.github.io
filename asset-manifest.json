@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/alphabet_SH.github.io/static/css/main.a7dea66a.css",
-    "main.js": "/alphabet_SH.github.io/static/js/main.4c0e75a6.js",
+    "main.css": "/alphabet_SH.github.io/static/css/main.4748a95e.css",
+    "main.js": "/alphabet_SH.github.io/static/js/main.ea5dbac8.js",
     "static/js/453.7159ba20.chunk.js": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js",
     "static/media/Section1-1.jpg": "/alphabet_SH.github.io/static/media/Section1-1.2d9aeff44bfa920f956b.jpg",
+    "static/media/manufacturingImage.jpg": "/alphabet_SH.github.io/static/media/manufacturingImage.5400589aa2a5a4713d1d.jpg",
     "static/media/Product5.jpg": "/alphabet_SH.github.io/static/media/Product5.9d566d5baa48b47d02b2.jpg",
     "static/media/Product1.jpg": "/alphabet_SH.github.io/static/media/Product1.296973c8b2818adf9b69.jpg",
     "static/media/Section2-3.jpg": "/alphabet_SH.github.io/static/media/Section2-3.44d02804da300895636e.jpg",
@@ -16,12 +17,12 @@
     "static/media/Product4.jpg": "/alphabet_SH.github.io/static/media/Product4.711b058982dd86f4573d.jpg",
     "static/media/Section1-3.jpg": "/alphabet_SH.github.io/static/media/Section1-3.b7dc72159ebf8a38c497.jpg",
     "index.html": "/alphabet_SH.github.io/index.html",
-    "main.a7dea66a.css.map": "/alphabet_SH.github.io/static/css/main.a7dea66a.css.map",
-    "main.4c0e75a6.js.map": "/alphabet_SH.github.io/static/js/main.4c0e75a6.js.map",
+    "main.4748a95e.css.map": "/alphabet_SH.github.io/static/css/main.4748a95e.css.map",
+    "main.ea5dbac8.js.map": "/alphabet_SH.github.io/static/js/main.ea5dbac8.js.map",
     "453.7159ba20.chunk.js.map": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7dea66a.css",
-    "static/js/main.4c0e75a6.js"
+    "static/css/main.4748a95e.css",
+    "static/js/main.ea5dbac8.js"
   ]
 }
