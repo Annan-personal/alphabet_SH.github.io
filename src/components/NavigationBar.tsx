@@ -23,8 +23,10 @@ function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navbarBg ? 'bg-gray-800 text-white shadow-lg' : 'bg-transparent text-black'
-                }`}
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+                navbarBg ? 'text-white shadow-lg' : 'text-white shadow-lg'
+            }`}
+            style={{ backgroundColor: navbarBg ? '#0f172a' : '#0f172a' }}
         >
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -33,15 +35,15 @@ function Navbar() {
                     src={`${process.env.PUBLIC_URL}/LOGO_transparent.png`}
                     alt="Company Logo"
                     className="h-12 w-auto"
-                    style={{ filter: navbarBg ? 'brightness(100)' : 'none' }} // Optional: darken logo on transparent background
+                    style={{ filter: navbarBg ? 'brightness(100)' : 'brightness(100)' }} // Optional: darken logo on transparent background
                 />
 
                 {/* Navigation Links */}
                 <ul className="flex space-x-6 font-bold">
-                    <li><Link to="/" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Home</Link></li>
-                    <li><Link to="/services" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Services</Link></li>
-                    <li><Link to="/about" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>About</Link></li>
-                    <li><Link to="/contact" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-black'}`}>Contact</Link></li>
+                    <li><Link to="/" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-white'}`}>Home</Link></li>
+                    <li><Link to="/services" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-white'}`}>Services</Link></li>
+                    <li><Link to="/about" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-white'}`}>About</Link></li>
+                    <li><Link to="/contact" className={`hover:text-blue-300 ${navbarBg ? 'text-white' : 'text-white'}`}>Contact</Link></li>
                 </ul>
             </div>
         </nav>
