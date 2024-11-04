@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/alphabet_SH.github.io/static/css/main.9bfed48b.css",
-    "main.js": "/alphabet_SH.github.io/static/js/main.6c1f944e.js",
+    "main.css": "/alphabet_SH.github.io/static/css/main.2ad767da.css",
+    "main.js": "/alphabet_SH.github.io/static/js/main.3968411e.js",
     "static/js/453.7159ba20.chunk.js": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js",
     "static/media/Section1-1.jpg": "/alphabet_SH.github.io/static/media/Section1-1.2d9aeff44bfa920f956b.jpg",
     "static/media/manufacturingImage.jpg": "/alphabet_SH.github.io/static/media/manufacturingImage.5400589aa2a5a4713d1d.jpg",
@@ -17,12 +17,12 @@
     "static/media/Product4.jpg": "/alphabet_SH.github.io/static/media/Product4.711b058982dd86f4573d.jpg",
     "static/media/Section1-3.jpg": "/alphabet_SH.github.io/static/media/Section1-3.b7dc72159ebf8a38c497.jpg",
     "index.html": "/alphabet_SH.github.io/index.html",
-    "main.9bfed48b.css.map": "/alphabet_SH.github.io/static/css/main.9bfed48b.css.map",
-    "main.6c1f944e.js.map": "/alphabet_SH.github.io/static/js/main.6c1f944e.js.map",
+    "main.2ad767da.css.map": "/alphabet_SH.github.io/static/css/main.2ad767da.css.map",
+    "main.3968411e.js.map": "/alphabet_SH.github.io/static/js/main.3968411e.js.map",
     "453.7159ba20.chunk.js.map": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bfed48b.css",
-    "static/js/main.6c1f944e.js"
+    "static/css/main.2ad767da.css",
+    "static/js/main.3968411e.js"
   ]
 }
