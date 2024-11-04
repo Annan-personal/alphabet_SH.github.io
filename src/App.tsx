@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <NavPic />
-      <ServicesSection />
+      <ServicesSection2 />
     </div>
   );
 };
