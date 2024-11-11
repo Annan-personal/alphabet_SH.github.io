@@ -1,9 +1,23 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check screen width on initial load and on resize
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Set to true if screen width is below 768px
+    };
+    
+    checkScreenSize(); // Check once on initial render
+    window.addEventListener("resize", checkScreenSize); // Update on resize
+
+    return () => window.removeEventListener("resize", checkScreenSize); // Cleanup listener
+  }, []);
+
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   let colors = [
@@ -35,19 +49,21 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-slate-700 relative"
+          className="w-16 h-8 border-l border-slate-700 relative"
         >
           {cols.map((_, j) => (
             <motion.div
               whileHover={{
-                backgroundColor: `var(${getRandomColor()})`,
+                backgroundColor: isMobile ? "none" : `var(${getRandomColor()})`,
                 transition: { duration: 0 },
               }}
-              animate={{
-                transition: { duration: 2 },
-              }}
+              animate={
+                isMobile
+                  ? { opacity: 1 } // No animation on mobile
+                  : { transition: { duration: 2 } }
+              }
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-700 relative"
+              className="w-16 h-8 border-r border-t border-slate-700 relative"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg

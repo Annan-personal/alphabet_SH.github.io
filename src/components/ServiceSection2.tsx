@@ -56,6 +56,8 @@ function ServicesSection2() {
                             src={service.link}
                             alt={service.title}
                             className="w-full h-48 object-cover"
+                            loading="lazy" // Lazy load images
+                            srcSet={`${service.link} 1x, ${service.link.replace('.webp', '@2x.webp')} 2x`} // Serve higher resolution images for retina displays if available
                         />
 
                         {/* Content below image */}
