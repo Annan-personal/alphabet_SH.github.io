@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
     const [navbarBg, setNavbarBg] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+    
+    // Explicitly define the dropdown timeout type
+    let dropdownTimeout: ReturnType<typeof setTimeout> | undefined;
 
-    // Optimize scroll event with useCallback
     const handleScroll = useCallback(() => {
         setNavbarBg(window.scrollY > 50);
     }, []);
@@ -15,8 +18,18 @@ function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [handleScroll]);
 
-    // Toggle menu without delay
+    // Toggle mobile menu
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+
+    // Open products dropdown without timeout
+    const openDropdown = () => {
+        if (dropdownTimeout) clearTimeout(dropdownTimeout);
+        setIsProductsDropdownOpen(true);
+    };
+
+    const closeDropdown = () => {
+        dropdownTimeout = setTimeout(() => setIsProductsDropdownOpen(false), 200);
+    };
 
     return (
         <nav
@@ -30,13 +43,29 @@ function Navbar() {
                     alt="Company Logo"
                     className="h-12 w-auto"
                     style={{ filter: navbarBg ? 'brightness(100)' : 'brightness(100)' }}
-                    loading="lazy" // Lazy load the logo for faster initial load
+                    loading="lazy"
                 />
 
                 {/* Desktop Navigation Links */}
                 <ul className="hidden md:flex space-x-6 font-bold">
                     <li><Link to="/" className="hover:text-blue-300 text-white">Home</Link></li>
-                    <li><Link to="/services" className="hover:text-blue-300 text-white">Products</Link></li>
+
+                    {/* Products Dropdown */}
+                    <li
+                        className="relative"
+                        onMouseEnter={openDropdown}
+                        onMouseLeave={closeDropdown}
+                    >
+                        <Link to="/products" className="hover:text-blue-300 text-white">Products</Link>
+                        {isProductsDropdownOpen && (
+                            <ul className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg">
+                                <li><Link to="/products/product1" className="block px-4 py-2 hover:bg-gray-700">High-Tensile Mesh</Link></li>
+                                <li><Link to="/products/product2" className="block px-4 py-2 hover:bg-gray-700">Product 2</Link></li>
+                                <li><Link to="/products/product3" className="block px-4 py-2 hover:bg-gray-700">Product 3</Link></li>
+                            </ul>
+                        )}
+                    </li>
+
                     <li><Link to="/about" className="hover:text-blue-300 text-white">About</Link></li>
                     <li><Link to="/contact" className="hover:text-blue-300 text-white">Contact</Link></li>
                 </ul>
@@ -54,7 +83,16 @@ function Navbar() {
                 {isMenuOpen && (
                     <div className="absolute top-full left-0 w-full bg-gray-800 text-white flex flex-col items-center md:hidden">
                         <Link onClick={toggleMenu} to="/" className="block px-4 py-2 hover:bg-gray-700">Home</Link>
-                        <Link onClick={toggleMenu} to="/services" className="block px-4 py-2 hover:bg-gray-700">Services</Link>
+                        <div className="relative">
+                            <button onClick={() => setIsProductsDropdownOpen((prev) => !prev)} className="block px-4 py-2 hover:bg-gray-700">Products</button>
+                            {isProductsDropdownOpen && (
+                                <ul className="w-full bg-gray-800 text-white">
+                                    <li><Link onClick={toggleMenu} to="/products/product1" className="block px-4 py-2 hover:bg-gray-700">Product 1</Link></li>
+                                    <li><Link onClick={toggleMenu} to="/products/product2" className="block px-4 py-2 hover:bg-gray-700">Product 2</Link></li>
+                                    <li><Link onClick={toggleMenu} to="/products/product3" className="block px-4 py-2 hover:bg-gray-700">Product 3</Link></li>
+                                </ul>
+                            )}
+                        </div>
                         <Link onClick={toggleMenu} to="/about" className="block px-4 py-2 hover:bg-gray-700">About</Link>
                         <Link onClick={toggleMenu} to="/contact" className="block px-4 py-2 hover:bg-gray-700">Contact</Link>
                     </div>

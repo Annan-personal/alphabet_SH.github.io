@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavigationBar';
 import NavPic from './components/NavigationPicture';
@@ -15,11 +15,15 @@ import About from './pages/About';
 import ContactPage from './pages/Contact';
 import Product1 from './pages/products/Product1'
 
-const HomePage: React.FC = () => {
+export const HomePage: React.FC = () => {
+  const servicesSectionRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div>
       <NavPic />
-      <ServicesSection2 />
+      <div ref={servicesSectionRef}>
+        <ServicesSection2 />
+      </div>
     </div>
   );
 };
@@ -32,7 +36,8 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<Product1 />} />
+          <Route path="/products" element={<Product1 />} />
+          <Route path="/products/product1" element={<Product1 />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
 

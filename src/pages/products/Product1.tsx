@@ -5,12 +5,13 @@ import section2_1 from "../../resources/Section2-1.jpg";
 import section2_2 from "../../resources/Section2-2.jpg";
 import section2_3 from "../../resources/Section2-3.jpg";
 import ImageGridWithParagraph from "../../components/ImageGridWithParagraph";
-import CertificationsSection from "../../components/CertificationsSection";
+import AzumaCertificationsSection from "../../components/AzumaCertificationsSection";
+import AkzoNobelCertificationsSection from "../../components/AkzoNobelCertificationsSection";
 import KeyFeaturesSection from "../../components/KeyFeaturesSection";
 import KeyAdvantagesSection from "../../components/KeyAdvantagesSection";
 import MainProductSection from "../../components/MainProductSection";
 
-function ProductWithServices() {
+function Product1() {
   const para2 = "Our stainless-steel mesh wire recognized in Australia and Canada market meet 8000+ hours neutral salt spray test ASTM B117-11 Pass cyclic salt FogUV exposure test ASTM D 5894-05 Over Knife shear test requirement Create a personalized outdoor living experience.";
 
   const [secondSectionVisible, setSecondSectionVisible] = useState(false);
@@ -59,7 +60,7 @@ function ProductWithServices() {
         description="With groundbreaking technology and unparalleled design."
       />
 
-      {/* Service Sections with Reduced Margin */}
+      {/* Service Sections */}
       <div ref={secondSectionRef} className="mt-4"> {/* Adjusted margin here */}
         <ImageGridWithParagraph
           images={[
@@ -72,7 +73,7 @@ function ProductWithServices() {
         />
       </div>
 
-      {/* Other Sections */}
+      {/* Key features and Advantages Sections */}
       <motion.h2
         className="text-4xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -81,7 +82,8 @@ function ProductWithServices() {
       >
         We proudly provide our products with all certifications
       </motion.h2>
-      <CertificationsSection />
+      <AzumaCertificationsSection />
+      <AkzoNobelCertificationsSection />
       <motion.h2
         className="text-4xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -92,8 +94,15 @@ function ProductWithServices() {
       </motion.h2>
       <KeyFeaturesSection />
       <KeyAdvantagesSection />
+
+      {/* Add some spaces */}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
 
-export default ProductWithServices;
+export default Product1;
