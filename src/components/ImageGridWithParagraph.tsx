@@ -69,7 +69,7 @@ const ImageGridWithParagraph: React.FC<ImageGridWithParagraphProps> = ({
 
       {/* Paragraph Section */}
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <p className="text-lg text-gray-700">{paragraph}</p>
+        <p className="text-lg text-white">{paragraph}</p>
       </div>
     </div>
   );

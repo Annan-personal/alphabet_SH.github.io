@@ -13,6 +13,7 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import Services from './pages/Service';
 import About from './pages/About';
 import ContactPage from './pages/Contact';
+import Product1 from './pages/products/Product1'
 
 const HomePage: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services" element={<Product1 />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactPage />} />
 

@@ -36,7 +36,7 @@ function Navbar() {
                 {/* Desktop Navigation Links */}
                 <ul className="hidden md:flex space-x-6 font-bold">
                     <li><Link to="/" className="hover:text-blue-300 text-white">Home</Link></li>
-                    <li><Link to="/services" className="hover:text-blue-300 text-white">Services</Link></li>
+                    <li><Link to="/services" className="hover:text-blue-300 text-white">Products</Link></li>
                     <li><Link to="/about" className="hover:text-blue-300 text-white">About</Link></li>
                     <li><Link to="/contact" className="hover:text-blue-300 text-white">Contact</Link></li>
                 </ul>

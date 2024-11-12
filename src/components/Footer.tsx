@@ -5,7 +5,7 @@ function Footer() {
     const companyIntro = "Alphabet patented modular structure ecosystem aligns the requirements of wholesalers, retailers, and installers, providing a framework dedicated to mutual success and customer contentment.";
 
     return (
-        <footer className="bg-gray-800 text-white py-8">
+        <footer className="bg-black text-white py-8">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row md:justify-between gap-4 items-start">  {/* Changed items-center to items-start */}
 
