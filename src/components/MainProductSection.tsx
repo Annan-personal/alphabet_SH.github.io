@@ -17,7 +17,7 @@ const MainProductSection: React.FC<MainProductSectionProps> = ({
             <motion.img
                 src={imageSrc}
                 alt="Main Product Image"
-                className="w-full max-w-3xl mb-8"
+                className="w-full max-w-2xl max-h-xl mb-8"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}

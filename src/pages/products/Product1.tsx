@@ -56,7 +56,7 @@ function Product1() {
       {/* Main Product Section */}
       <MainProductSection
         imageSrc={ProductImage1}
-        title="The Use of High-Tensile High-Quality Mesh in Home"
+        title="High-Tensile High-Quality Mesh"
         description="With groundbreaking technology and unparalleled design."
       />
 
