@@ -60,8 +60,11 @@ function Navbar() {
                         {isProductsDropdownOpen && (
                             <ul className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg">
                                 <li><Link to="/products/product1" className="block px-4 py-2 hover:bg-gray-700">High-Tensile Mesh</Link></li>
-                                <li><Link to="/products/product2" className="block px-4 py-2 hover:bg-gray-700">Product 2</Link></li>
-                                <li><Link to="/products/product3" className="block px-4 py-2 hover:bg-gray-700">Product 3</Link></li>
+                                <li><Link to="/products/product2" className="block px-4 py-2 hover:bg-gray-700">Patio and Enclosures Mesh</Link></li>
+                                <li><Link to="/products/product3" className="block px-4 py-2 hover:bg-gray-700">Hurricane Protection Screens</Link></li>
+                                <li><Link to="/products/product4" className="block px-4 py-2 hover:bg-gray-700">Fiberglass Visible Mesh</Link></li>
+                                <li><Link to="/products/product5" className="block px-4 py-2 hover:bg-gray-700">Perforated Aluminum Mesh</Link></li>
+                                <li><Link to="/products/product6" className="block px-4 py-2 hover:bg-gray-700">Curtain Wall</Link></li>
                             </ul>
                         )}
                     </li>
@@ -90,6 +93,9 @@ function Navbar() {
                                     <li><Link onClick={toggleMenu} to="/products/product1" className="block px-4 py-2 hover:bg-gray-700">Product 1</Link></li>
                                     <li><Link onClick={toggleMenu} to="/products/product2" className="block px-4 py-2 hover:bg-gray-700">Product 2</Link></li>
                                     <li><Link onClick={toggleMenu} to="/products/product3" className="block px-4 py-2 hover:bg-gray-700">Product 3</Link></li>
+                                    <li><Link onClick={toggleMenu} to="/products/product4" className="block px-4 py-2 hover:bg-gray-700">Product 4</Link></li>
+                                    <li><Link onClick={toggleMenu} to="/products/product5" className="block px-4 py-2 hover:bg-gray-700">Product 5</Link></li>
+                                    <li><Link onClick={toggleMenu} to="/products/product6" className="block px-4 py-2 hover:bg-gray-700">Product 6</Link></li>
                                 </ul>
                             )}
                         </div>

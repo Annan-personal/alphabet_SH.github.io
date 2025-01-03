@@ -10,6 +10,7 @@ import AkzoNobelCertificationsSection from "../../components/AkzoNobelCertificat
 import KeyFeaturesSection from "../../components/KeyFeaturesSection";
 import KeyAdvantagesSection from "../../components/KeyAdvantagesSection";
 import MainProductSection from "../../components/MainProductSection";
+import Product1Spec from "../../resources/Product1Spec.jpg";
 
 function Product1() {
   const para2 = "Our stainless-steel mesh wire recognized in Australia and Canada market meet 8000+ hours neutral salt spray test ASTM B117-11 Pass cyclic salt FogUV exposure test ASTM D 5894-05 Over Knife shear test requirement Create a personalized outdoor living experience.";
@@ -93,7 +94,31 @@ function Product1() {
         Key Features and Advantages
       </motion.h2>
       <KeyFeaturesSection />
-      <KeyAdvantagesSection />
+      {/* <KeyAdvantagesSection /> */}
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <motion.h2
+        className="text-4xl font-bold mb-4 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        SPECIFICATIONS
+      </motion.h2>
+      <div className="flex flex-col items-center space-y-4 pt-10">
+      <div className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 `}
+                style={{ maxHeight: '600px', maxWidth: '800px' }}
+            >
+                <img
+                    src={Product1Spec}
+                    alt="Product1Spec"
+                    className="w-full h-full object-cover"
+                />
+            </div>
+            </div>
 
       {/* Add some spaces */}
       <br />

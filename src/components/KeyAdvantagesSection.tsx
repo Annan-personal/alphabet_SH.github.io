@@ -1,5 +1,5 @@
 import React from "react";
-import AdvantageImage from "../resources/KeyAdvantage.jpeg"; // Replace with your actual image path
+import AdvantageImage from "../resources/KeyAdvantage.png"; // Replace with your actual image path
 
 function KeyAdvantagesSection() {
     return (

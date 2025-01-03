@@ -15,7 +15,7 @@ export function HoverEffect({ items }: HoverEffectProps) {
   const navigate = useNavigate(); // React Router's hook to programmatically navigate
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {items.slice(0, 6).map((item, index) => (
         <div
           key={index}
