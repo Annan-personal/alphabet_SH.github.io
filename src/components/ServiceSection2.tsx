@@ -9,34 +9,40 @@ import Product6 from '../resources/Product6.jpg';
 
 const services = [
     {
-        title: 'High-Tensile Mesh',
+        title: 'High-Tensile High-Quality Mesh Mesh',
         description: '',
         link: Product1,
+        nav: "/products/product1"
     },
     {
         title: 'Patio and Enclosures Mesh',
         description: '',
         link: Product2,
+        nav: "/products/product2"
     },
     {
         title: 'Hurricane Protection Screens',
         description: '',
         link: Product3,
+        nav: "/products/product3"
     },
     {
         title: 'Fiberglass Visible Mesh',
         description: '',
         link: Product4,
+        nav: "/products/product4"
     },
     {
         title: 'Perforated Aluminum Mesh',
         description: '',
         link: Product5,
+        nav: "/products/product5"
     },
     {
         title: 'Curtain Wall',
         description: '',
         link: Product6,
+        nav: "/products/product6"
     }
 ];
 
@@ -74,7 +80,7 @@ function ServicesSection2() {
                                 {service.description}
                             </p>
                             <button
-                                onClick={() => navigate('/services')}
+                                onClick={() => navigate(service.nav)}
                                 className="bg-blue-500 text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full hover:bg-blue-600 mx-auto block"
                             >
                                 Learn More

@@ -38,6 +38,7 @@ function Navbar() {
         >
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                 {/* Logo */}
+                <Link to="/">
                 <img
                     src={`${process.env.PUBLIC_URL}/LOGO_transparent.png`}
                     alt="Company Logo"
@@ -45,6 +46,7 @@ function Navbar() {
                     style={{ filter: navbarBg ? 'brightness(100)' : 'brightness(100)' }}
                     loading="lazy"
                 />
+                </Link>
 
                 {/* Desktop Navigation Links */}
                 <ul className="hidden md:flex space-x-6 font-bold">
