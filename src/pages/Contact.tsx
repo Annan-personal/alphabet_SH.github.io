@@ -1,49 +1,53 @@
-import React from 'react';
+"use client";
+import { WorldMap } from "../components/ui/world-map";
+import { motion } from "motion/react";
 
-const Contact: React.FC = () => {
-    return (
-        <div
-            style={{
-                backgroundImage: "url('/world.gif')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                height: '100vh',
-            }}
-        >
-            <h1 className="text-3xl font-bold text-center text-black py-10 pt-20">We have business across the world!</h1>
-            {/* Contact Information - Positioned near cities */}
-            <div className="relative w-full h-full">
-                {/* Shanghai */}
-                {/* <div className="absolute top-[50%] left-[60%] transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="text-xl font-bold">Shanghai</h2>
-                    <p>Phone: +86 21-1234567</p>
-                    <p>Email: shanghai@example.com</p>
-                </div> */}
-
-                {/* Singapore */}
-                {/* <div className="absolute top-[60%] left-[65%] transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="text-xl font-bold">Singapore</h2>
-                    <p>Phone: +65 1234-5678</p>
-                    <p>Email: singapore@example.com</p>
-                </div> */}
-
-                {/* London */}
-                {/* <div className="absolute top-[30%] left-[35%] transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="text-xl font-bold">London</h2>
-                    <p>Phone: +44 20-1234-5678</p>
-                    <p>Email: london@example.com</p>
-                </div> */}
-
-                {/* San Francisco */}
-                {/* <div className="absolute top-[40%] left-[10%] transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="text-xl font-bold">San Francisco</h2>
-                    <p>Phone: +1 415-123-4567</p>
-                    <p>Email: sanfrancisco@example.com</p>
-                </div> */}
-            </div>
-        </div>
-    );
-};
+function Contact() {
+  return (
+    <div className=" py-40 dark:bg-black bg-white w-full">
+      <div className="max-w-7xl mx-auto text-center">
+        <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
+          We have business{" "}
+          <span className="text-neutral-400">
+            {"Across The World".split("").map((word, idx) => (
+              <motion.span
+                key={idx}
+                className="inline-block"
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: idx * 0.04 }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </span>
+        </p>
+        <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
+          Alphabet provides its architectural screen solutions and modular
+          construction materials to clients worldwide, ensuring accessibility
+          and support across all regions. With a strong global presence, our
+          dedicated teams are ready to assist, and you can easily find contact
+          points in every major area.
+        </p>
+      </div>
+      <WorldMap
+        dots={[
+          {
+            start: { lat: 15.5, lng: 114.1 }, // Shanghai
+            end: { lat: -55, lng: 138 }, // Melbourne
+          },
+          {
+            start: { lat: 15.5, lng: 114.1 }, // Shanghai
+            end: { lat: 28, lng: -115 }, // San Francisco
+          },
+          {
+            start: { lat: 15.5, lng: 114.1 }, // Shanghai
+            end: { lat: 42, lng: 0 }, // London
+          },
+        ]}
+      />
+    </div>
+  );
+}
 
 export default Contact;
