@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alphabet_SH.github.io/static/css/main.7e735af3.css",
-    "main.js": "/alphabet_SH.github.io/static/js/main.3b91a8e4.js",
+    "main.js": "/alphabet_SH.github.io/static/js/main.934d453b.js",
     "static/js/453.7159ba20.chunk.js": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js",
     "static/media/Product4-top.jpg": "/alphabet_SH.github.io/static/media/Product4-top.924f73cfb3c7682365c5.jpg",
     "static/media/Product1-top.jpg": "/alphabet_SH.github.io/static/media/Product1-top.495e3331043bdb8858d0.jpg",
@@ -39,11 +39,11 @@
     "static/media/ScreenSize1.jpg": "/alphabet_SH.github.io/static/media/ScreenSize1.a7837e63e466398037af.jpg",
     "index.html": "/alphabet_SH.github.io/index.html",
     "main.7e735af3.css.map": "/alphabet_SH.github.io/static/css/main.7e735af3.css.map",
-    "main.3b91a8e4.js.map": "/alphabet_SH.github.io/static/js/main.3b91a8e4.js.map",
+    "main.934d453b.js.map": "/alphabet_SH.github.io/static/js/main.934d453b.js.map",
     "453.7159ba20.chunk.js.map": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e735af3.css",
-    "static/js/main.3b91a8e4.js"
+    "static/js/main.934d453b.js"
   ]
 }
