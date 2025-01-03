@@ -33,15 +33,15 @@ function Contact() {
       <WorldMap
         dots={[
           {
-            start: { lat: 15.5, lng: 114.1 }, // Shanghai
-            end: { lat: -55, lng: 138 }, // Melbourne
+            start: { lat: 15.5, lng: 114.5 }, // Shanghai
+            end: { lat: -55, lng: 139.5 }, // Melbourne
           },
           {
-            start: { lat: 15.5, lng: 114.1 }, // Shanghai
-            end: { lat: 28, lng: -115 }, // San Francisco
+            start: { lat: 15.5, lng: 114.5 }, // Shanghai
+            end: { lat: 28, lng: -116 }, // San Francisco
           },
           {
-            start: { lat: 15.5, lng: 114.1 }, // Shanghai
+            start: { lat: 15.5, lng: 114.5 }, // Shanghai
             end: { lat: 42, lng: 0 }, // London
           },
         ]}

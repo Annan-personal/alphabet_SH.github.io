@@ -37,14 +37,14 @@ function NavPic() {
           </div>
       </div>
   ) : (
-      <div className="h-[700px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+      <div className="h-[800px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
    
         <Boxes />
-        <h1 className={cn("md:text-6xl font-bold text-white relative z-20")}>
+        <h1 className={cn("md:text-8xl font-bold text-white relative z-20")}>
         ALPHABET
         </h1>
-        <p className="text-center text-xl mt-2 text-neutral-300 relative z-20">
+        <p className="text-center text-2xl mt-2 text-neutral-300 relative z-20">
         Achieve
         <FlipWords words={words} /> <br />
         with Alphabet's expertise
