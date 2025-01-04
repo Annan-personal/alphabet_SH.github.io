@@ -4,8 +4,7 @@ import DottedMap from "dotted-map";
 
 interface MapProps {
   dots?: Array<{
-    start: { lat: number; lng: number; label?: string };
-    end: { lat: number; lng: number; label?: string };
+    position: { lat: number; lng: number; label?: string[] }; // Single position
   }>;
   lineColor?: string;
   theme?: "light" | "dark"; // Add theme as a prop
@@ -32,15 +31,6 @@ export function WorldMap({
     return { x, y };
   };
 
-  const createCurvedPath = (
-    start: { x: number; y: number },
-    end: { x: number; y: number }
-  ) => {
-    const midX = (start.x + end.x) / 2;
-    const midY = Math.min(start.y, end.y) - 50;
-    return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
-  };
-
   return (
     <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans md:px-10">
       <img
@@ -54,108 +44,58 @@ export function WorldMap({
         viewBox="0 0 800 400"
         className="w-full h-full absolute inset-0 pointer-events-none select-none"
       >
-        {dots.map((dot, i) => {
-          const startPoint = projectPoint(dot.start.lat, dot.start.lng);
-          const endPoint = projectPoint(dot.end.lat, dot.end.lng);
-          return (
-            <g key={`path-group-${i}`}>
-              <motion.path
-                d={createCurvedPath(startPoint, endPoint)}
-                fill="none"
-                stroke="url(#path-gradient)"
-                strokeWidth="1"
-                initial={{
-                  pathLength: 0,
-                }}
-                animate={{
-                  pathLength: 1,
-                }}
-                transition={{
-                  duration: 1,
-                  delay: 0.5 * i,
-                  ease: "easeOut",
-                }}
-                key={`start-upper-${i}`}
-              ></motion.path>
-            </g>
-          );
-        })}
-
-        <defs>
-          <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0" />
-            <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
         {dots.map((dot, i) => (
           <g key={`points-group-${i}`}>
-            <g key={`start-${i}`}>
-              <circle
-                cx={projectPoint(dot.start.lat, dot.start.lng).x}
-                cy={projectPoint(dot.start.lat, dot.start.lng).y}
-                r="2"
-                fill={lineColor}
+            <circle
+              cx={projectPoint(dot.position.lat, dot.position.lng).x}
+              cy={projectPoint(dot.position.lat, dot.position.lng).y}
+              r="2"
+              fill={lineColor}
+            />
+            <circle
+              cx={projectPoint(dot.position.lat, dot.position.lng).x}
+              cy={projectPoint(dot.position.lat, dot.position.lng).y}
+              r="2"
+              fill={lineColor}
+              opacity="0.5"
+            >
+              <animate
+                attributeName="r"
+                from="2"
+                to="8"
+                dur="1.5s"
+                begin="0s"
+                repeatCount="indefinite"
               />
-              <circle
-                cx={projectPoint(dot.start.lat, dot.start.lng).x}
-                cy={projectPoint(dot.start.lat, dot.start.lng).y}
-                r="2"
-                fill={lineColor}
-                opacity="0.5"
-              >
-                <animate
-                  attributeName="r"
-                  from="2"
-                  to="8"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  from="0.5"
-                  to="0"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-            </g>
-            <g key={`end-${i}`}>
-              <circle
-                cx={projectPoint(dot.end.lat, dot.end.lng).x}
-                cy={projectPoint(dot.end.lat, dot.end.lng).y}
-                r="2"
-                fill={lineColor}
+              <animate
+                attributeName="opacity"
+                from="0.5"
+                to="0"
+                dur="1.5s"
+                begin="0s"
+                repeatCount="indefinite"
               />
-              <circle
-                cx={projectPoint(dot.end.lat, dot.end.lng).x}
-                cy={projectPoint(dot.end.lat, dot.end.lng).y}
-                r="2"
-                fill={lineColor}
-                opacity="0.5"
+            </circle>
+            {Array.isArray(dot.position.label) && (
+              <text
+                x={projectPoint(dot.position.lat, dot.position.lng).x}
+                y={projectPoint(dot.position.lat, dot.position.lng).y + 10} // Adjust for positioning below the dot
+                textAnchor="middle"
+                fontSize="8"
+                fontWeight="bold" // Bold text
+                fill={theme === "dark" ? "white" : "darkblue"} // Adjust text color
               >
-                <animate
-                  attributeName="r"
-                  from="2"
-                  to="8"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  from="0.5"
-                  to="0"
-                  dur="1.5s"
-                  begin="0s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-            </g>
+                {dot.position.label.map((line, index) => (
+                  <tspan
+                    x={projectPoint(dot.position.lat, dot.position.lng).x}
+                    dy={index === 0 ? "0" : "1.2em"}
+                    key={index}
+                  >
+                    {line}
+                  </tspan>
+                ))}
+              </text>
+            )}
           </g>
         ))}
       </svg>

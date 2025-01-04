@@ -76,7 +76,7 @@ function ServicesSection2() {
                 <h3 className="text-xl font-bold mb-2 text-center lg:text-2xl">
                   {service.title}
                 </h3>
-                <div className="my-4 h-px bg-gray-300"></div>
+                <div className="my-4 h-px bg-blue-800"></div>
                 <p className="text-center text-gray-600 lg:text-lg">
                   {service.description}
                 </p>
