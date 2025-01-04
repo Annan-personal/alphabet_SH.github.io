@@ -5,7 +5,7 @@ import NavPic from './components/NavigationPicture';
 import ServicesSection from './components/ServiceSection';
 import ServicesSection2 from './components/ServiceSection2';
 import ContactSection from './components/ContactSection';
-import ServicesPage from './pages/Service';
+import Home from './pages/HomePage';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 
@@ -21,14 +21,9 @@ import Product5 from './pages/products/Product5'
 import Product6 from './pages/products/Product6'
 
 export const HomePage: React.FC = () => {
-  const servicesSectionRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <div>
-      <NavPic />
-      <div ref={servicesSectionRef}>
-        <ServicesSection2 />
-      </div>
+      <Home />
     </div>
   );
 };

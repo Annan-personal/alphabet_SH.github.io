@@ -73,13 +73,10 @@ function Product4() {
   const para2 =
     "FIBREGLASS flyscreen is an economical option for producing residential window and door screens. It has good flexibility and will not dent, corrode or stain. This screen has a matt charcoal coating ideally suited to reduce sun glare.";
 
-  // Scroll to top on page load
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+    useEffect(() => {
+      // Scroll to the top when the page is visited
+      window.scrollTo(0, 0);
+    }, []);
 
   // Observe when the second section of the services page enters the viewport
   useEffect(() => {

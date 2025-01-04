@@ -119,12 +119,9 @@ function Product2() {
   const [secondSectionVisible, setSecondSectionVisible] = useState(false);
   const secondSectionRef = useRef<HTMLDivElement | null>(null);
 
-  // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    // Scroll to the top when the page is visited
+    window.scrollTo(0, 0);
   }, []);
 
   // Observe when the second section of the services page enters the viewport

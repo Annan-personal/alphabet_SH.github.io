@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import manufacturingImage from '../resources/manufacturingImage.jpg';
 
 function About() {
@@ -6,6 +6,10 @@ function About() {
     const who_is_alphabet_part1 = "Alphabet, the designer and manufacturer of architectural screen products, strives to set the benchmark for exceeding our customers’ expectations in innovation, quality, and product delivery. We understand our client, addressing business risks and opportunities whilst adhering to quality management systems, product requirements, statutory and regulatory requirement."
     const who_is_alphabet_part2 = "Alphabet provides solutions for construction materials leads the way of patented modular structure emphasizes on recycle ecosystem offering an unmatched balance of strength, durability, and productivity enhancements."
 
+    useEffect(() => {
+        // Scroll to the top when the page is visited
+        window.scrollTo(0, 0);
+      }, []);
     return (
         <div className="min-h-screen bg-white text-gray-700 pt-20">
             {/* Header Section */}
