@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/alphabet_SH.github.io/static/css/main.77611d93.css",
-    "main.js": "/alphabet_SH.github.io/static/js/main.79802046.js",
+    "main.js": "/alphabet_SH.github.io/static/js/main.94c5697b.js",
     "static/js/453.7159ba20.chunk.js": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js",
     "static/media/Product4-top.jpg": "/alphabet_SH.github.io/static/media/Product4-top.924f73cfb3c7682365c5.jpg",
     "static/media/Product1-top.jpg": "/alphabet_SH.github.io/static/media/Product1-top.495e3331043bdb8858d0.jpg",
@@ -39,11 +39,11 @@
     "static/media/ScreenSize1.jpg": "/alphabet_SH.github.io/static/media/ScreenSize1.a7837e63e466398037af.jpg",
     "index.html": "/alphabet_SH.github.io/index.html",
     "main.77611d93.css.map": "/alphabet_SH.github.io/static/css/main.77611d93.css.map",
-    "main.79802046.js.map": "/alphabet_SH.github.io/static/js/main.79802046.js.map",
+    "main.94c5697b.js.map": "/alphabet_SH.github.io/static/js/main.94c5697b.js.map",
     "453.7159ba20.chunk.js.map": "/alphabet_SH.github.io/static/js/453.7159ba20.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77611d93.css",
-    "static/js/main.79802046.js"
+    "static/js/main.94c5697b.js"
   ]
 }
