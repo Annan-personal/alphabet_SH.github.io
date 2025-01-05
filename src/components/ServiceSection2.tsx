@@ -54,7 +54,7 @@ const services = [
 
 function ServicesSection2() {
   return (
-    <div className="py-12 bg-gray-100 font-poppins">
+    <div className="py-12 bg-gray-50 font-poppins">
       <h2 className="text-4xl text-center font-bold mb-8">OUR PRODUCTS</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-lg mx-auto px-4">
         {services.map((service, index) => (

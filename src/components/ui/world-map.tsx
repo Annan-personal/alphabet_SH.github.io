@@ -81,9 +81,8 @@ export function WorldMap({
                 x={projectPoint(dot.position.lat, dot.position.lng).x}
                 y={projectPoint(dot.position.lat, dot.position.lng).y + 10} // Adjust for positioning below the dot
                 textAnchor="middle"
-                fontSize="8"
-                fontWeight="bold" // Bold text
-                fill={theme === "dark" ? "white" : "darkblue"} // Adjust text color
+                fontSize="7"
+                fill={theme === "dark" ? "white" : "#0f172a"} // Adjust text color
               >
                 {dot.position.label.map((line, index) => (
                   <tspan

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import NavPic from '../components/NavigationPicture';
 import ServicesSection2 from '../components/ServiceSection2';
+import WhyAlphabet from '../components/WhyAlphabet';
+import Tests from '../components/Tests';
 
 function Home() {
     useEffect(() => {
@@ -14,6 +16,8 @@ function Home() {
         <div ref={servicesSectionRef}>
           <ServicesSection2 />
         </div>
+        <Tests />
+        <WhyAlphabet />
       </div>
     );
 }

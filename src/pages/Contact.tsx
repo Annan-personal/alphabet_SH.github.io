@@ -75,7 +75,7 @@ function Contact() {
             position: {
               lat: 42,
               lng: 0,
-              label: ["Soul Goodman", "London, U.K.", "+44 1234-5678"],
+              label: ["Saul Goodman", "London, U.K.", "+44 1234-5678"],
             }, // London
           },
           {

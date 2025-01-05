@@ -80,8 +80,8 @@ function Product1() {
       >
         We proudly provide our products with all certifications
       </motion.h2>
-      <AzumaCertificationsSection />
-      <AkzoNobelCertificationsSection />
+      {/* <AzumaCertificationsSection />
+      <AkzoNobelCertificationsSection /> */}
       <motion.h2
         className="text-4xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: 20 }}
