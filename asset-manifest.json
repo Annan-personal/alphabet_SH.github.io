@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/alphabet_SH.github.io/static/css/main.c9f36939.css",
-    "main.js": "/alphabet_SH.github.io/static/js/main.5621c963.js",
+    "main.css": "/alphabet_SH.github.io/static/css/main.a3538d98.css",
+    "main.js": "/alphabet_SH.github.io/static/js/main.3e035490.js",
     "static/js/453.12f74bf2.chunk.js": "/alphabet_SH.github.io/static/js/453.12f74bf2.chunk.js",
     "static/media/whyAl.jpg": "/alphabet_SH.github.io/static/media/whyAl.74ff1b4fdd4fad067619.jpg",
     "static/media/Product4-top.jpg": "/alphabet_SH.github.io/static/media/Product4-top.924f73cfb3c7682365c5.jpg",
+    "static/media/product3-background.jpg": "/alphabet_SH.github.io/static/media/product3-background.9c5cd2d67b0ca2628925.jpg",
     "static/media/Product1-top.jpg": "/alphabet_SH.github.io/static/media/Product1-top.495e3331043bdb8858d0.jpg",
-    "static/media/GridBackground.jpg": "/alphabet_SH.github.io/static/media/GridBackground.3594f12a9da310cd4055.jpg",
     "static/media/Product2.jpg": "/alphabet_SH.github.io/static/media/Product2.c6f6f071161f5bded22d.jpg",
     "static/media/Product5.jpg": "/alphabet_SH.github.io/static/media/Product5.8b2f4f30aa57be5ff945.jpg",
     "static/media/KeyFeatures.jpg": "/alphabet_SH.github.io/static/media/KeyFeatures.133cdb85dc28123a4089.jpg",
@@ -28,6 +28,7 @@
     "static/media/Section2-1.jpg": "/alphabet_SH.github.io/static/media/Section2-1.b2a3ea1b1f7368215e39.jpg",
     "static/media/product2_2.jpg": "/alphabet_SH.github.io/static/media/product2_2.5d0eec3b03079c80d2e3.jpg",
     "static/media/SPEC2.jpg": "/alphabet_SH.github.io/static/media/SPEC2.7efbec954a797b3622c6.jpg",
+    "static/media/IogoWhiteBackground.jpg": "/alphabet_SH.github.io/static/media/IogoWhiteBackground.80f2aeaab0ebb181ddbb.jpg",
     "static/media/Section2-2.jpg": "/alphabet_SH.github.io/static/media/Section2-2.fe04324056d0693023f8.jpg",
     "static/media/SPEC3.jpg": "/alphabet_SH.github.io/static/media/SPEC3.b156104e35e72d777e18.jpg",
     "static/media/SPEC1.jpg": "/alphabet_SH.github.io/static/media/SPEC1.484ae9c11b9c5e5eac81.jpg",
@@ -39,12 +40,12 @@
     "static/media/preparing.jpg": "/alphabet_SH.github.io/static/media/preparing.6801a96363ac8c0d4ba9.jpg",
     "static/media/ScreenSize1.jpg": "/alphabet_SH.github.io/static/media/ScreenSize1.a7837e63e466398037af.jpg",
     "index.html": "/alphabet_SH.github.io/index.html",
-    "main.c9f36939.css.map": "/alphabet_SH.github.io/static/css/main.c9f36939.css.map",
-    "main.5621c963.js.map": "/alphabet_SH.github.io/static/js/main.5621c963.js.map",
+    "main.a3538d98.css.map": "/alphabet_SH.github.io/static/css/main.a3538d98.css.map",
+    "main.3e035490.js.map": "/alphabet_SH.github.io/static/js/main.3e035490.js.map",
     "453.12f74bf2.chunk.js.map": "/alphabet_SH.github.io/static/js/453.12f74bf2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9f36939.css",
-    "static/js/main.5621c963.js"
+    "static/css/main.a3538d98.css",
+    "static/js/main.3e035490.js"
   ]
 }
