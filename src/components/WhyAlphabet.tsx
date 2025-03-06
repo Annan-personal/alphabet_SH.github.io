@@ -30,10 +30,10 @@ function WhyAlphabet() {
             <p className="mb-4 md:text-xl">
               It is more important than ever to keep interior furnishings as
               clean as possible. Bacteria, mold, and mildew are the sworn
-              enemies of outdoor fabric, shades, and screens. These stain-and-odor-causing
-              bacteria thrive on heat and humidity and can be extremely
-              destructive. They can also cause structural damage to the fibers
-              and shorten the overall life of your fabric.
+              enemies of outdoor fabric, shades, and screens. These
+              stain-and-odor-causing bacteria thrive on heat and humidity and
+              can be extremely destructive. They can also cause structural
+              damage to the fibers and shorten the overall life of your fabric.
             </p>
             <p className="mb-6 md:text-xl">
               The solution is to reduce the growth of mold, mildew, and other

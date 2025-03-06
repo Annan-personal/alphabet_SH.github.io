@@ -19,7 +19,7 @@ function Product3() {
       <div className="border-2 border-white p-2">
         <div className="bg-white bg-opacity-70 shadow-lg p-6 md:p-10">
           <motion.h1
-            className="text-5xl font-bold mb-4 text-center text-gray-700 pt-10"
+            className="text-5xl font-bold mb-4 text-center text-black pt-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1 }}

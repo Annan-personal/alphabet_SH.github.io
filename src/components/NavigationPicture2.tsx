@@ -7,7 +7,7 @@ function HomePageHero() {
   return (
     <div className="z-0">
       <div
-        className="h-[800px] bg-cover bg-center items-center justify-center pt-6 relative"
+        className="w-full h-screen bg-cover bg-center items-center justify-center pt-6 relative"
         style={{
           backgroundImage: `url(${BackgroundImage})`,
         }}
@@ -19,7 +19,12 @@ function HomePageHero() {
                 <h1 className="text-7xl font-bold mb-4 text-center">
                   <span className="text-red-700">Al</span>
                   <span className="text-green-700">phabet</span>
-                  <span className="text-green-700 text-4xl pl-2" style={{ verticalAlign: '-8px' }}>&reg;</span>
+                  <span
+                    className="text-green-700 text-4xl pl-2"
+                    style={{ verticalAlign: "-8px" }}
+                  >
+                    &reg;
+                  </span>
                 </h1>
                 <p className="text-center text-green-700 text-3xl relative -mt-4">
                   CONSTRUCTING YOUR LIFE
