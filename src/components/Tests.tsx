@@ -10,7 +10,9 @@ const ResourceSection: React.FC = () => {
         <div className="w-full border-t border-gray-500 mb-8"></div>
         <br />
         <br />
-        <h2 className="text-4xl text-center font-bold mb-8">We Proudly provide our Products with tests passing</h2>
+        <h2 className="text-4xl text-center font-bold mb-8">
+          We Proudly provide our Products with tests passing
+        </h2>
         {/* Top Section */}
         <div className="flex flex-col md:flex-row items-center mb-12">
           {/* Image on the left */}
@@ -51,7 +53,11 @@ const ResourceSection: React.FC = () => {
             <ul className="list-disc list-inside text-gray-600 mb-4">
               <h3 className="text-2xl">
                 {" "}
-                Sustainability is one of our core values – and is integrated in everything we do. We strive to lead our industry by empowering people and reducing our impact on the planet – while consistently innovating to deliver the most sustainable solutions for our customers.{" "}
+                Sustainability is one of our core values – and is integrated in
+                everything we do. We strive to lead our industry by empowering
+                people and reducing our impact on the planet – while
+                consistently innovating to deliver the most sustainable
+                solutions for our customers.{" "}
               </h3>
             </ul>
             <a
