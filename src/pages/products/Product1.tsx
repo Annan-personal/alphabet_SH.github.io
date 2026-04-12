@@ -5,10 +5,7 @@ import section2_1 from "../../resources/Section2-1.jpg";
 import section2_2 from "../../resources/Section2-2.jpg";
 import section2_3 from "../../resources/Section2-3.jpg";
 import ImageGridWithParagraph from "../../components/ImageGridWithParagraph";
-import AzumaCertificationsSection from "../../components/AzumaCertificationsSection";
-import AkzoNobelCertificationsSection from "../../components/AkzoNobelCertificationsSection";
 import KeyFeaturesSection from "../../components/KeyFeaturesSection";
-import KeyAdvantagesSection from "../../components/KeyAdvantagesSection";
 import MainProductSection from "../../components/MainProductSection";
 import Product1Spec from "../../resources/Product1Spec.jpg";
 
@@ -78,24 +75,9 @@ function Product1() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        We proudly provide our products with all certifications
-      </motion.h2>
-      {/* <AzumaCertificationsSection />
-      <AkzoNobelCertificationsSection /> */}
-      <motion.h2
-        className="text-4xl font-bold mb-4 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
-      >
         Key Features and Advantages
       </motion.h2>
       <KeyFeaturesSection />
-      {/* <KeyAdvantagesSection /> */}
-      <br />
-      <br />
-      <br />
-      <br />
 
       <motion.h2
         className="text-4xl font-bold mb-4 text-center"
@@ -117,12 +99,6 @@ function Product1() {
             </div>
             </div>
 
-      {/* Add some spaces */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 }

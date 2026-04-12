@@ -1,5 +1,3 @@
-"use client";
-
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -79,7 +77,7 @@ export const AnimatedTestimonials = ({
                   className="absolute inset-0 origin-bottom"
                 >
                   <img
-                    src={`${process.env.PUBLIC_URL}/${testimonial.src}`}
+                    src={`${import.meta.env.BASE_URL}${testimonial.src}`}
                     alt={testimonial.name}
                     draggable={false}
                     className="h-full w-full rounded-3xl object-cover object-center"
