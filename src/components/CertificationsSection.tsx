@@ -2,7 +2,7 @@ import React from "react";
 import AkzoNobelCertificationsSection from "./AkzoNobelCertificationsSection";
 import AzumaCertificationsSection from "./AzumaCertificationsSection";
 
-const ResourceSection: React.FC = () => {
+const CertificationsSection: React.FC = () => {
   return (
     <div className="bg-gray-50 py-12">
       {/* Wrapper to match AntimicrobialSection width */}
@@ -76,4 +76,4 @@ const ResourceSection: React.FC = () => {
   );
 };
 
-export default ResourceSection;
+export default CertificationsSection;

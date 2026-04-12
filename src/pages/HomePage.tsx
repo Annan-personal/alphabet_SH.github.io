@@ -1,23 +1,19 @@
-import React, { useEffect, useRef } from "react";
-import NavPic from "../components/NavigationPicture";
-import ServicesSection2 from "../components/ServiceSection2";
+import React, { useEffect } from "react";
+import ProductsGrid from "../components/ProductsGrid";
 import WhyAlphabet from "../components/WhyAlphabet";
-import Tests from "../components/Tests";
-import HomePageHero from "../components/NavigationPicture2";
+import CertificationsSection from "../components/CertificationsSection";
+import HeroSection from "../components/HeroSection";
 
 function Home() {
   useEffect(() => {
     // Scroll to the top when the page is visited
     window.scrollTo(0, 0);
   }, []);
-  const servicesSectionRef = useRef<HTMLDivElement | null>(null);
   return (
     <div>
-      <HomePageHero />
-      <div ref={servicesSectionRef}>
-        <ServicesSection2 />
-      </div>
-      <Tests />
+      <HeroSection />
+      <ProductsGrid />
+      <CertificationsSection />
       <WhyAlphabet />
     </div>
   );

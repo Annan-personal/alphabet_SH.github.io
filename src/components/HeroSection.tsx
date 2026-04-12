@@ -33,7 +33,7 @@ function HomePageHero() {
                 <p className="font-bold text-center text-2xl mt-2 relative z-20">
                   Achieve
                   <FlipWords words={words} /> <br />
-                  with the morden constructing
+                  with the modern constructing
                 </p>
               </div>
             </div>

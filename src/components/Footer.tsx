@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Footer() {
-    // const [condition, setCondition] = useState(true);
     const companyIntro = "Alphabet patented modular structure ecosystem aligns the requirements of wholesalers, retailers, and installers, providing a framework dedicated to mutual success and customer contentment.";
 
     return (
@@ -11,7 +10,7 @@ function Footer() {
 
                     {/* Company Logo */}
                     <div className="flex justify-center md:justify-start">
-                        <img src={`${process.env.PUBLIC_URL}/LOGO_transparent.png`} alt="Company Logo" className="h-12 w-auto" style={{ filter: 'brightness(100)' }} />  {/* Reduced logo size */}
+                        <img src={`${import.meta.env.BASE_URL}LOGO_transparent.png`} alt="Company Logo" className="h-12 w-auto" style={{ filter: 'brightness(100)' }} />  {/* Reduced logo size */}
                     </div>
 
                     {/* Company Info */}
@@ -42,7 +41,7 @@ function Footer() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2 justify-center md:justify-start hover:text-blue-300"
                         >
-                            <img src={`${process.env.PUBLIC_URL}/LinkedIn_LOGO.png`} alt="LinkedIn" className="h-4 w-auto" />
+                            <img src={`${import.meta.env.BASE_URL}LinkedIn_LOGO.png`} alt="LinkedIn" className="h-4 w-auto" />
                             <span>LinkedIn</span>
                         </a>
                     </div>
@@ -50,7 +49,7 @@ function Footer() {
 
                 {/* Bottom Section */}
                 <div className="mt-8 border-t border-gray-700 pt-4 text-center">
-                    <p>&copy; {new Date().getFullYear()} ALPHABET. All Rights Reserved. Desgined by Annan Zhang.</p>
+                    <p>&copy; {new Date().getFullYear()} ALPHABET. All Rights Reserved. Designed by Annan Zhang.</p>
                 </div>
             </div>
         </footer>

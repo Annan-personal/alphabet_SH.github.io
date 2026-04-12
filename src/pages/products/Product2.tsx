@@ -5,13 +5,8 @@ import section2_1 from "../../resources/product2_1.jpg";
 import section2_2 from "../../resources/product2_2.jpg";
 import section2_3 from "../../resources/product2_3.jpg";
 import ImageGridWithParagraph from "../../components/ImageGridWithParagraph";
-import AzumaCertificationsSection from "../../components/AzumaCertificationsSection";
-import AkzoNobelCertificationsSection from "../../components/AkzoNobelCertificationsSection";
 import KeyFeatures from "../../resources/KeyFeaturesSectionPro2.jpg";
-import KeyAdvantagesSection from "../../components/KeyAdvantagesSection";
 import MainProductSection from "../../components/MainProductSection";
-import Product1Spec from "../../resources/Product1Spec.jpg";
-import ScreenSize from "../../components/ScreenSize";
 import SPEC1 from "../../resources/SPEC1.jpg";
 import SPEC2 from "../../resources/SPEC2.jpg";
 import SPEC3 from "../../resources/SPEC3.jpg";
@@ -70,10 +65,8 @@ function Spec() {
         <div className="flex flex-col items-center space-y-4 pt-6">
         <div className="flex space-x-5">
                 <div
-                    key={1}
-                    className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 ${
-                        true? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-                    }`}
+                    key={0}
+                    className="relative overflow-hidden rounded-lg shadow-lg"
                     style={{ maxHeight: '200px', maxWidth: '400px', marginTop: '100px' }}
                 >
                     <img
@@ -84,9 +77,7 @@ function Spec() {
                 </div>
                 <div
                     key={1}
-                    className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 ${
-                        true? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-                    }`}
+                    className="relative overflow-hidden rounded-lg shadow-lg"
                     style={{ maxHeight: '400px', maxWidth: '400px' }}
                 >
                     <img
@@ -96,10 +87,8 @@ function Spec() {
                     />
                 </div>
                 <div
-                    key={1}
-                    className={`relative overflow-hidden rounded-lg shadow-lg transition-transform duration-700 ${
-                        true? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'
-                    }`}
+                    key={2}
+                    className="relative overflow-hidden rounded-lg shadow-lg"
                     style={{ maxHeight: '200px', maxWidth: '400px', marginTop: '100px' }}
                 >
                     <img
@@ -181,11 +170,6 @@ function Product2() {
         Key Features and Advantages
       </motion.h2>
       <KeyFeaturesSectionPro2 />
-      {/* <KeyAdvantagesSection /> */}
-      <br />
-      <br />
-      <br />
-      <br />
 
       <motion.h2
         className="text-4xl font-bold mb-4 text-center"
@@ -210,12 +194,6 @@ function Product2() {
             </div>
             </div>
 
-      {/* Add some spaces */}
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 }

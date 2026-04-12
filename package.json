@@ -1,5 +1,4 @@
 {
-  "homepage": "https://annan-personal.github.io/alphabet_SH.github.io/",
   "name": "alphabet_website",
   "version": "0.1.0",
   "private": true,
@@ -8,11 +7,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tabler/icons-react": "^3.21.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.112",
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "clsx": "^2.1.1",
@@ -24,43 +18,23 @@
     "react-dropzone": "^14.3.5",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.13.1",
-    "react-router-dom": "^6.26.2",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.30.3",
     "tailwind-merge": "^2.6.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
-    "babel-preset-react-app": "^10.0.1",
     "gh-pages": "^6.1.1",
     "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^3.4.13",
+    "vite": "^6.3.2"
   }
 }

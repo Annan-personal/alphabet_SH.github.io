@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LOGO from "../resources/IogoWhiteBackground.jpg";
 
 function Navbar() {
@@ -34,10 +34,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`top-0 left-0 w-full z-50 transition-all duration-300 ${
-        navbarBg ? "text-white shadow-lg" : "text-white shadow-lg"
-      }`}
-      style={{ backgroundColor: navbarBg ? "white" : "white" }}
+      className="top-0 left-0 w-full z-50 shadow-lg text-white"
+      style={{ backgroundColor: "white" }}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
@@ -46,7 +44,6 @@ function Navbar() {
             src={LOGO}
             alt="Company Logo"
             className="h-20"
-            // style={{ filter: navbarBg ? 'brightness(100)' : 'brightness(100)' }}
           />
         </Link>
 
