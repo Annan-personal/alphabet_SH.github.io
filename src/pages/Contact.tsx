@@ -1,6 +1,7 @@
 import { WorldMap } from "../components/ui/world-map";
 import { motion } from "motion/react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
   useEffect(() => {
@@ -9,9 +10,17 @@ function Contact() {
   }, []);
 
   return (
-    <div className="py-40 dark:bg-black bg-white w-full">
+    <>
+    <Helmet>
+      <title>Contact - Alphabet_SH</title>
+      <meta
+        name="description"
+        content="Reach Alphabet_SH's global teams across Shanghai, San Francisco, Melbourne, London, and New York for architectural mesh and modular construction inquiries."
+      />
+    </Helmet>
+    <main className="py-40 dark:bg-black bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
+        <h1 className="font-bold text-xl md:text-4xl dark:text-white text-black">
           We have business{" "}
           <span className="text-neutral-400">
             {"Across The World".split("").map((word, idx) => (
@@ -26,7 +35,7 @@ function Contact() {
               </motion.span>
             ))}
           </span>
-        </p>
+        </h1>
         <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
           Alphabet provides its architectural screen solutions and modular
           construction materials to clients worldwide, ensuring accessibility
@@ -86,7 +95,8 @@ function Contact() {
           },
         ]}
       />
-    </div>
+    </main>
+    </>
   );
 }
 

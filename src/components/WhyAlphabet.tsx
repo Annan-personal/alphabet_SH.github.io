@@ -3,7 +3,7 @@ import Image from "../resources/whyAl.jpg"; // Replace with the correct image im
 
 function WhyAlphabet() {
   return (
-    <div className="py-12 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Horizontal Line */}
         <div className="w-full border-t border-gray-500 mb-8"></div>
@@ -17,8 +17,9 @@ function WhyAlphabet() {
           <div className="w-full md:w-1/2">
             <img
               src={Image}
-              alt="Antimicrobial Fabrics and Screening"
+              alt="Antimicrobial fabrics and screening"
               className="w-full h-auto rounded-lg object-cover shadow-sm"
+              loading="lazy"
             />
           </div>
 
@@ -49,7 +50,7 @@ function WhyAlphabet() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import manufacturingImage from '../resources/manufacturingImage.jpg';
 
 function About() {
@@ -11,8 +12,16 @@ function About() {
         window.scrollTo(0, 0);
       }, []);
     return (
-        <div className="min-h-screen bg-white text-gray-700 pt-20">
-            {/* Header Section */}
+        <>
+            <Helmet>
+                <title>About Us - Alphabet_SH</title>
+                <meta
+                    name="description"
+                    content="Alphabet_SH is a designer and manufacturer of architectural screen products, committed to innovation, quality, and on-time delivery."
+                />
+            </Helmet>
+            <main className="min-h-screen bg-white text-gray-700 pt-20">
+                {/* Header Section */}
             <section className="text-center py-16 px-6">
                 <h1 className="text-4xl font-bold text-black mb-4">WHO IS ALPHABET</h1>
                 <p className="max-w-3xl mx-auto text-lg text-black-500">
@@ -60,11 +69,13 @@ function About() {
             <section className="w-full py-8"> {/* Added padding on top and bottom */}
                 <img
                     src={manufacturingImage}
-                    alt="Manufacturing Process"
+                    alt="Alphabet_SH manufacturing process"
                     className="max-w-4xl mx-auto w-full h-auto object-cover"
+                    loading="lazy"
                 />
             </section>
-        </div>
+            </main>
+        </>
     );
 }
 

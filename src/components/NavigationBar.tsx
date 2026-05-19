@@ -1,23 +1,13 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LOGO from "../resources/IogoWhiteBackground.jpg";
 
 function Navbar() {
-  const [navbarBg, setNavbarBg] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
 
   // Explicitly define the dropdown timeout type
   let dropdownTimeout: ReturnType<typeof setTimeout> | undefined;
-
-  const handleScroll = useCallback(() => {
-    setNavbarBg(window.scrollY > 50);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
 
   // Toggle mobile menu
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -42,8 +32,9 @@ function Navbar() {
         <Link to="/">
           <img
             src={LOGO}
-            alt="Company Logo"
+            alt="Alphabet_SH company logo"
             className="h-20"
+            fetchPriority="high"
           />
         </Link>
 

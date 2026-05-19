@@ -1,0 +1,277 @@
+# .clauderules — Alphabet_SH Agent Working Rules
+
+This file defines the constraints any Claude/AI agent MUST follow when modifying
+code in this repository. All rules are mandatory for frontend/web changes;
+violating any rule means the task is incomplete.
+
+---
+
+## 0. Communication Language
+
+- **Conversation with the user:** Chinese is allowed (the user prefers Chinese
+  for back-and-forth discussion).
+- **All file content MUST be in English**, including:
+  - Source code identifiers, string literals intended for code (not UI copy),
+    log messages, and error messages.
+  - All code comments (`//`, `/* */`, JSDoc).
+  - Commit messages, PR descriptions, and any new Markdown/docs files.
+  - File and directory names.
+- UI-facing copy (text rendered to end users) may be in whatever language the
+  product requires — this rule governs developer-facing text only.
+
+---
+
+## 1. Language & Framework
+
+- **TypeScript is mandatory.** All new or modified source files must be
+  `.ts` / `.tsx`.
+- **`any` is forbidden.**
+  - Do not use `any` in any form: `: any`, `as any`, `any[]`,
+    `Record<string, any>`, etc.
+  - When a type is unknown, use `unknown` and narrow it before use.
+  - For third-party libraries without types, add a `.d.ts` declaration under
+    `src/types/`. Do NOT bypass typing with `any`.
+- **React component rules:**
+  - Use **function components** only — class components are not allowed.
+  - Manage state and side effects with **Hooks**.
+  - Every component's props must have an explicit TypeScript definition
+    (`interface XxxProps` or `type XxxProps`).
+
+## 2. Coding Conventions
+
+### Naming
+
+- **Variables, functions, methods:** `camelCase` (e.g. `userName`, `handleClick`).
+- **Module-level constants / immutable literals:** `SCREAMING_SNAKE_CASE`
+  (e.g. `MAX_RETRY_COUNT`, `API_BASE_URL`).
+- **React components:** `PascalCase`
+  (e.g. `NavigationPicture`, `ProductSpec`).
+- **Types and interfaces:** `PascalCase`
+  (e.g. `ProductProps`, `UserInfo`).
+- **Assets under `src/resources/`:**
+  - Names must be meaningful and map clearly to the component that consumes
+    them.
+  - Recommended format: `<componentName>_<purpose>.<ext>`,
+    e.g. `navBar_logo.png`, `productSpec_hero.jpg`.
+  - Do NOT use names like `image1.png`, `IMG_0001.jpg`, or `untitled.png`.
+
+### Async Handling
+
+- Use **`async/await`** consistently. Do NOT chain `.then().catch()`.
+- Every `await` call MUST be wrapped in a `try-catch`.
+- Inside `catch`, call the **global error handler**. If it does not exist yet,
+  create `src/lib/errorHandler.ts` exporting
+  `handleError(error: unknown, context?: string)`.
+- Example:
+  ```ts
+  try {
+    const data = await fetchProducts();
+    setProducts(data);
+  } catch (error) {
+    handleError(error, 'fetchProducts');
+  }
+  ```
+
+### Component Reuse & File Organization
+
+- **If reusable, extract it.** Any UI fragment or logic that appears in
+  ≥2 places must be extracted into its own component / hook. No duplicated
+  code (DRY).
+- **File size:** A single `.tsx` file should not exceed ~300 lines. If it does,
+  split it.
+- **Sensible component decomposition:**
+  - One component, one clear responsibility (SRP).
+  - Pages (`src/pages/`) must be composed of multiple section components.
+    Do NOT pile all JSX into a single page file.
+  - Generic UI primitives → `src/components/ui/`.
+    Business sections → `src/components/`.
+- **Readability:**
+  - JSX nesting depth should stay ≤ 4 levels. Beyond that, extract a child
+    component.
+  - Pull complex conditional renders into well-named variables or child
+    components. No nested ternaries.
+- **Tailwind class merging:** Always use `cn()` from `src/lib/utils.ts`.
+  Do NOT manually concatenate class strings.
+
+## 3. Project Structure
+
+- Routes are defined in `src/App.tsx`. New pages go under `src/pages/`.
+- Images:
+  - Imported directly in components → `src/resources/`.
+  - Referenced by URL path → `public/`.
+- Styling uses Tailwind CSS 3. Custom variables live in `tailwind.config.js`;
+  global base styles in `src/index.css`.
+
+## 4. SEO, Semantics & Performance (Vite + React)
+
+This section is specific to building public-facing pages. It compensates for
+the lack of Next.js conveniences (`next/image`, automatic head management,
+file-system routing metadata).
+
+### 4.1 SEO Metadata — Per-Route Head Tags
+
+- Every route page MUST set a unique `<title>` and
+  `<meta name="description">` via `react-helmet-async`'s `<Helmet>`.
+- **Title template:** `{Page Name} - {Product / Category} - Alphabet_SH`.
+  Example: `Patio Mesh - Products - Alphabet_SH`.
+- The root tree must be wrapped in `<HelmetProvider>` (in `src/index.tsx` or
+  `src/App.tsx`).
+
+> ⚠️ `react-helmet-async` is NOT currently installed. The first task that
+> adds per-page SEO must install it (`npm install react-helmet-async` —
+> requires user approval per §5) and wrap the root with `<HelmetProvider>`.
+
+Example:
+```tsx
+import { Helmet } from 'react-helmet-async';
+
+const AboutPage = () => (
+  <>
+    <Helmet>
+      <title>About Us - Alphabet_SH</title>
+      <meta name="description" content="Learn about Alphabet_SH's vision, mission, and team." />
+    </Helmet>
+    <main>
+      <section>
+        <h1>Our Vision</h1>
+        <p>...</p>
+        <img src="/team.webp" alt="Alphabet_SH team photo" fetchpriority="high" />
+      </section>
+    </main>
+  </>
+);
+```
+
+### 4.2 Semantic HTML
+
+- Use semantic landmarks: `<main>`, `<section>`, `<article>`, `<nav>`,
+  `<header>`, `<footer>`. Do NOT default to `<div>` for structural regions.
+- Each route page must have **exactly one** `<main>`.
+- Heading hierarchy: one `<h1>` per page; sub-sections use `<h2>`, `<h3>` in
+  order — do not skip levels.
+
+### 4.3 Images
+
+- **Every `<img>` MUST have an `alt` attribute.** For decorative-only images
+  use `alt=""` (empty, NOT missing).
+- **Above-the-fold / first viewport images:** add `fetchpriority="high"`
+  (and optionally `loading="eager"`).
+- **All other images:** add `loading="lazy"`.
+- Provide explicit `width` and `height` when known, to avoid layout shift
+  (CLS).
+- This project does NOT use Next.js — `next/image` is not available. Rely on
+  Vite's built-in asset hashing plus the attributes above for optimization.
+  If a heavier optimization pipeline is needed later (auto-resize, WebP/AVIF
+  variants), evaluate `vite-imagetools` and discuss before installing.
+
+### 4.4 Links
+
+- Internal navigation MUST use `<Link>` from `react-router-dom`.
+  Never use a raw `<a href="/internal-path">` — it triggers a full reload
+  and breaks SPA navigation.
+- External links: `<a href="..." target="_blank" rel="noopener noreferrer">`.
+- File downloads (PDF, etc.): `<a>` with the `download` attribute and a
+  well-named filename. Filename convention: lowercase, ASCII only,
+  `{topic}_{detail}.{ext}` (e.g. `product1_spec_sheet.pdf`). No spaces, no
+  `IMG_0001`-style noise.
+
+### 4.5 Breadcrumbs
+
+- Product and category pages MUST render a reusable `<Breadcrumbs>`
+  component, e.g. `Products > Industrial Mesh > Fire-retardant Series`.
+- Implement once at `src/components/Breadcrumbs.tsx` and reuse — do NOT
+  hand-write breadcrumb markup per page.
+
+> Note: No `Breadcrumbs` component exists yet. The first task that needs one
+> should create it as a reusable component, typed via props.
+
+### 4.6 Structured Data (JSON-LD)
+
+- Product pages MUST emit Schema.org `Product` JSON-LD via `<Helmet>`,
+  including at minimum `name`, `image`, `description`, and `brand`.
+- Centralize generation in `src/lib/schema.ts`: take typed props, return a
+  `<script type="application/ld+json">…</script>` block.
+
+> Note: No JSON-LD helper exists yet. The first product page touched after
+> this rule lands should introduce `src/lib/schema.ts`.
+
+### 4.7 Icons
+
+- Use **SVG-based icon components only** — currently
+  `@tabler/icons-react` and `@fortawesome/react-fontawesome`.
+- ❌ Forbidden: icon fonts (Glyphicons, Material Icons font, etc.).
+- For one-off custom icons, place an SVG under `src/resources/` and import
+  it, or inline the SVG markup.
+
+---
+
+## 5. Agent Workflow Rules
+
+### Before Editing
+
+1. Run `ls` first to confirm the target directory structure exists, so files
+   are not created in the wrong place.
+2. For any existing file you intend to modify, `Read` the full file first.
+   Do not edit blindly.
+
+### After Editing
+
+1. Run the self-check commands:
+   ```bash
+   npm run lint        # ESLint (config: eslint.config.mjs)
+   npm run typecheck   # tsc --noEmit
+   ```
+2. If lint or typecheck reports an **error**, fix it before delivering. Do not
+   ship code with errors. Warnings should be addressed when touching the
+   relevant file (Boy-Scout rule) but are not strictly blocking.
+3. `npm run lint:fix` auto-fixes formatting-level issues; review the diff
+   before committing.
+4. For UI changes, verify the golden path under `npm start`
+   (Vite dev server at `http://localhost:5173`). If verification is not
+   possible, say so explicitly.
+
+### Fix-on-Touch (Boy-Scout Rule, mandatory)
+
+When you modify a file for any task, audit **that file** against §1–§4 and
+fix any rule violations you can fix without expanding the scope of the task.
+Common things to clean up opportunistically:
+
+- `<img>` missing `alt`, `loading`, or (for above-the-fold) `fetchpriority`
+- Generic alts like `"Product"`, `"SPEC1"`, `"Image"` — rewrite to be
+  meaningful
+- `<div>` used where `<main>` / `<section>` / `<header>` / `<footer>` /
+  `<nav>` is the correct semantic landmark
+- Missing `<Helmet>` on a route page
+- Untyped props, `any` slips, lingering `@ts-ignore`
+- Internal navigation using raw `<a href="/...">` instead of `<Link>`
+- Duplicated logic / inline component definitions that can be split out
+  within the same file
+- Missing `loading="lazy"` on below-the-fold media
+
+Do **NOT** chase violations into other files in the same change — that
+becomes a separate refactor task and should be discussed with the user.
+**Note the opportunistic cleanup in your response and commit message** so
+the diff isn't a surprise to reviewers.
+
+### Git / Shell Safety
+
+- Never use `--no-verify` to skip hooks.
+- Do not run irreversible operations (`git push`, `git reset --hard`,
+  `rm -rf`, force-push, etc.) without explicit user approval.
+- Do not `npm install` new dependencies without asking first. If a new
+  dependency is genuinely required, explain why and request approval.
+
+## 6. Forbidden
+
+- ❌ Using `any`, `@ts-ignore`, or `@ts-nocheck` to bypass the type system.
+  In rare unavoidable cases, use `@ts-expect-error` with a comment explaining
+  why.
+- ❌ Copy-pasting duplicated code blocks instead of extracting an abstraction.
+- ❌ Cramming multiple independent components into a single file.
+- ❌ Delivering code that has not been type-checked.
+- ❌ Editing / writing a file without reading it first.
+
+---
+
+> These rules apply to all AI agent work in this repository. To adjust them,
+> edit this file directly and note the change in the commit message.

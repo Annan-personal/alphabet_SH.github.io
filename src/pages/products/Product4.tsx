@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import ProductImage1 from "../../resources/Product4-top.jpg";
 import { motion } from "framer-motion";
 import MainProductSection from "../../components/MainProductSection";
@@ -6,8 +7,6 @@ import section4_1 from "../../resources/product4_1.jpg";
 import section4_2 from "../../resources/product4_2.jpg";
 import section4_3 from "../../resources/product4_3.jpg";
 import ImageGridWithParagraph from "../../components/ImageGridWithParagraph";
-import KeyFeaturesSection from "../../components/KeyFeaturesSection";
-import KeyAdvantagesSection from "../../components/KeyAdvantagesSection";
 import KeyFeatures from "../../resources/KeyFeaturesPro4.jpg";
 import ScreenSize from "../../components/ScreenSize";
 import ScreenSize1 from "../../resources/ScreenSize1.jpg";
@@ -26,8 +25,9 @@ function KeyFeaturesSectionPro4() {
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src={KeyFeatures}
-          alt="Product"
+          alt="Fiberglass mesh key features illustration"
           className="w-full h-auto max-h-80 max-w-80 rounded-lg object-cover" // Increased max height for a larger image
+          loading="lazy"
         />
       </div>
 
@@ -68,44 +68,24 @@ function KeyFeaturesSectionPro4() {
 }
 
 function Product4() {
-  const [secondSectionVisible, setSecondSectionVisible] = useState(false);
-  const secondSectionRef = useRef<HTMLDivElement | null>(null);
   const para2 =
     "FIBREGLASS flyscreen is an economical option for producing residential window and door screens. It has good flexibility and will not dent, corrode or stain. This screen has a matt charcoal coating ideally suited to reduce sun glare.";
 
-    useEffect(() => {
-      // Scroll to the top when the page is visited
-      window.scrollTo(0, 0);
-    }, []);
-
-  // Observe when the second section of the services page enters the viewport
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setSecondSectionVisible(true);
-          }
-        });
-      },
-      {
-        threshold: 0.5, // Trigger when 50% of the section is visible
-      }
-    );
-
-    if (secondSectionRef.current) {
-      observer.observe(secondSectionRef.current);
-    }
-
-    return () => {
-      if (secondSectionRef.current) {
-        observer.unobserve(secondSectionRef.current);
-      }
-    };
+    // Scroll to the top when the page is visited
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div
+    <>
+    <Helmet>
+      <title>Fiberglass Visible Mesh - Products - Alphabet_SH</title>
+      <meta
+        name="description"
+        content="Economical fiberglass fly-screen mesh for residential window and door applications. Matt charcoal coating reduces sun glare; offers strong flexibility and corrosion resistance."
+      />
+    </Helmet>
+    <main
       style={{ backgroundColor: "#0f172a" }}
       className="text-white min-h-screen"
     >
@@ -117,7 +97,7 @@ function Product4() {
       />
 
       {/* Service Sections */}
-      <div ref={secondSectionRef} className="mt-4">
+      <div className="mt-4">
         {" "}
         {/* Adjusted margin here */}
         <ImageGridWithParagraph
@@ -153,7 +133,7 @@ function Product4() {
         Screen Size
       </motion.h2>
       <br />
-      <div ref={secondSectionRef} className="mt-4">
+      <div className="mt-4">
         {" "}
         {/* Adjusted margin here */}
         <ScreenSize
@@ -186,8 +166,9 @@ function Product4() {
             >
                 <img
                     src={Product4Spec}
-                    alt="Product4Spec"
+                    alt="Fiberglass mesh specifications"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                 />
             </div>
             </div>
@@ -198,7 +179,8 @@ function Product4() {
       <br />
       <br />
       <br />
-    </div>
+    </main>
+    </>
   );
 }
 

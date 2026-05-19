@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface ImageGridWithParagraphProps {
   images: { src: string; alt: string }[]; // Array of image objects
@@ -35,6 +35,7 @@ const ImageGridWithParagraph: React.FC<ImageGridWithParagraphProps> = ({
             src={images[0].src}
             alt={images[0].alt}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
@@ -50,6 +51,7 @@ const ImageGridWithParagraph: React.FC<ImageGridWithParagraphProps> = ({
               src={images[1].src}
               alt={images[1].alt}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div
@@ -62,6 +64,7 @@ const ImageGridWithParagraph: React.FC<ImageGridWithParagraphProps> = ({
               src={images[2].src}
               alt={images[2].alt}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>

@@ -5,7 +5,7 @@ import { FlipWords } from "./ui/flip-words";
 function HomePageHero() {
   const words = ["MODULAR", "EXTRUSION", "DECORATION", "ECOSYSTEM"];
   return (
-    <div className="z-0">
+    <section className="z-0">
       <div
         className="w-full h-screen bg-cover bg-center items-center justify-center pt-6 relative"
         style={{
@@ -40,7 +40,7 @@ function HomePageHero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

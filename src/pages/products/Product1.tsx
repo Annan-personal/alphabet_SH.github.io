@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import ProductImage1 from "../../resources/Product1-top.jpg";
 import section2_1 from "../../resources/Section2-1.jpg";
@@ -22,6 +23,7 @@ function Product1() {
 
   // Observe when the second section of the services page enters the viewport
   useEffect(() => {
+    const node = secondSectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,19 +37,27 @@ function Product1() {
       }
     );
 
-    if (secondSectionRef.current) {
-      observer.observe(secondSectionRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (secondSectionRef.current) {
-        observer.unobserve(secondSectionRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#0f172a" }} className="text-white min-h-screen">
+    <>
+    <Helmet>
+      <title>High-Tensile Mesh - Products - Alphabet_SH</title>
+      <meta
+        name="description"
+        content="High-tensile stainless-steel mesh from Alphabet_SH — passing 8,000+ hours of neutral salt spray (ASTM B117-11), cyclic salt fog/UV exposure (ASTM D 5894-05), and knife shear tests."
+      />
+    </Helmet>
+    <main style={{ backgroundColor: "#0f172a" }} className="text-white min-h-screen">
       {/* Main Product Section */}
       <MainProductSection
         imageSrc={ProductImage1}
@@ -93,13 +103,15 @@ function Product1() {
             >
                 <img
                     src={Product1Spec}
-                    alt="Product1Spec"
+                    alt="High-tensile mesh specifications"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                 />
             </div>
             </div>
 
-    </div>
+    </main>
+    </>
   );
 }
 

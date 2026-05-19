@@ -4,7 +4,7 @@ import AzumaCertificationsSection from "./AzumaCertificationsSection";
 
 const CertificationsSection: React.FC = () => {
   return (
-    <div className="bg-gray-50 py-12">
+    <section className="bg-gray-50 py-12">
       {/* Wrapper to match AntimicrobialSection width */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="w-full border-t border-gray-500 mb-8"></div>
@@ -72,7 +72,7 @@ const CertificationsSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

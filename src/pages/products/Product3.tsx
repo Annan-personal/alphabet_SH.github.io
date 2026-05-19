@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import MainProductSection from "../../components/MainProductSection";
-import ProductImage1 from "../../resources/preparing.jpg";
+import { Helmet } from "react-helmet-async";
 import background from "../../resources/product3-background.jpg";
 import { motion } from "framer-motion";
 
@@ -10,7 +9,15 @@ function Product3() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div
+    <>
+    <Helmet>
+      <title>Hurricane Protection Screens - Products - Alphabet_SH</title>
+      <meta
+        name="description"
+        content="Durable, lightweight, and visible hurricane protection screens from Alphabet_SH."
+      />
+    </Helmet>
+    <main
       className="h-[800px] bg-cover bg-center flex items-center justify-center relative"
       style={{
         backgroundImage: `url(${background})`,
@@ -43,7 +50,8 @@ function Product3() {
           </motion.p>
         </div>
       </div>
-    </div>
+    </main>
+    </>
   );
 }
 export default Product3;

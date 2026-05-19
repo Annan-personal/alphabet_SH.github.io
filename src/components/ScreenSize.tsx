@@ -29,6 +29,7 @@ const ScreenSize: React.FC<ScreenSizeNewProps> = ({ images, triggerAnimation }) 
                             src={image.src}
                             alt={image.alt}
                             className="w-full h-full object-cover"
+                            loading="lazy"
                         />
                     </div>
                 ))}
@@ -42,6 +43,7 @@ const ScreenSize: React.FC<ScreenSizeNewProps> = ({ images, triggerAnimation }) 
                     src={images[3].src}
                     alt={images[3].alt}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                 />
             </div>
         </div>

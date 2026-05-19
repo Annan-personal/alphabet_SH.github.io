@@ -3,7 +3,7 @@ import AdvantageImage from "../resources/KeyAdvantage.png"; // Replace with your
 
 function KeyAdvantagesSection() {
     return (
-        <div
+        <section
             className="flex flex-col md:flex-row items-center justify-center p-8 md:pl-16 space-y-6 md:space-y-0 md:space-x-12"
             style={{ backgroundColor: "#0f172a" }}
         >
@@ -11,8 +11,9 @@ function KeyAdvantagesSection() {
             <div className="w-full md:w-1/2 flex justify-center">
                 <img
                     src={AdvantageImage}
-                    alt="Advantage Image"
+                    alt="Key advantages illustration"
                     className="w-full h-auto max-h-80 max-w-80 rounded-lg object-cover" // Set width and height to create a square image
+                    loading="lazy"
                 />
             </div>
 
@@ -70,7 +71,7 @@ function KeyAdvantagesSection() {
                     </li>
                 </ul>
             </div>
-        </div>
+        </section>
     );
 }
 

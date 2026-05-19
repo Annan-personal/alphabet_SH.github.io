@@ -3,7 +3,7 @@ import KeyFeatures from "../resources/KeyFeatures.jpg";
 
 function KeyFeaturesSection() {
   return (
-    <div
+    <section
       className="flex flex-col md:flex-row items-center justify-center p-8 md:pl-16 space-y-6 md:space-y-0 md:space-x-12"
       style={{ backgroundColor: "#0f172a" }}
     >
@@ -11,8 +11,9 @@ function KeyFeaturesSection() {
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src={KeyFeatures}
-          alt="Product"
+          alt="Key features illustration"
           className="w-full h-auto max-h-80 max-w-80 rounded-lg object-cover" // Increased max height for a larger image
+          loading="lazy"
         />
       </div>
 
@@ -46,7 +47,7 @@ function KeyFeaturesSection() {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 

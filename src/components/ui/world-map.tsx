@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
 import DottedMap from "dotted-map";
 
 interface MapProps {
@@ -36,8 +35,9 @@ export function WorldMap({
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
-        alt="world map"
+        alt="World map showing Alphabet_SH global offices"
         draggable={false}
+        loading="lazy"
       />
       <svg
         ref={svgRef}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import ProductImage1 from "../../resources/Product2-top.jpg";
 import section2_1 from "../../resources/product2_1.jpg";
@@ -23,8 +24,9 @@ function KeyFeaturesSectionPro2() {
         <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={KeyFeatures}
-            alt="Product"
+            alt="Patio mesh key features illustration"
             className="w-full h-auto max-h-80 max-w-80 rounded-lg object-cover" // Increased max height for a larger image
+            loading="lazy"
           />
         </div>
   
@@ -71,8 +73,9 @@ function Spec() {
                 >
                     <img
                         src={SPEC1}
-                        alt="SPEC1"
+                        alt="Patio mesh specification sheet 1"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                     />
                 </div>
                 <div
@@ -82,8 +85,9 @@ function Spec() {
                 >
                     <img
                         src={SPEC2}
-                        alt="SPEC2"
+                        alt="Patio mesh specification sheet 2"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                     />
                 </div>
                 <div
@@ -93,8 +97,9 @@ function Spec() {
                 >
                     <img
                         src={SPEC3}
-                        alt="SPEC3"
+                        alt="Patio mesh specification sheet 3"
                         className="w-full h-full object-cover"
+                        loading="lazy"
                     />
                 </div>
         </div>
@@ -115,6 +120,7 @@ function Product2() {
 
   // Observe when the second section of the services page enters the viewport
   useEffect(() => {
+    const node = secondSectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -128,19 +134,27 @@ function Product2() {
       }
     );
 
-    if (secondSectionRef.current) {
-      observer.observe(secondSectionRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (secondSectionRef.current) {
-        observer.unobserve(secondSectionRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#0f172a" }} className="text-white min-h-screen">
+    <>
+    <Helmet>
+      <title>Patio and Enclosures Mesh - Products - Alphabet_SH</title>
+      <meta
+        name="description"
+        content="Aluminium fly-screen mesh optimized for ease of installation, surface flatness, and weather resistance — ideal for patios and enclosures."
+      />
+    </Helmet>
+    <main style={{ backgroundColor: "#0f172a" }} className="text-white min-h-screen">
       {/* Main Product Section */}
       <MainProductSection
         imageSrc={ProductImage1}
@@ -188,13 +202,15 @@ function Product2() {
             >
                 <img
                     src={SPEC4}
-                    alt="SPEC4"
+                    alt="Patio mesh specification sheet 4"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                 />
             </div>
             </div>
 
-    </div>
+    </main>
+    </>
   );
 }
 

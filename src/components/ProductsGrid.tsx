@@ -54,7 +54,7 @@ const services = [
 
 function ServicesSection2() {
   return (
-    <div className="py-12 bg-gray-50 font-poppins">
+    <section className="py-12 bg-gray-50 font-poppins">
       <h2 className="text-4xl text-center font-bold mb-8">OUR PRODUCTS</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-lg mx-auto px-4">
         {services.map((service, index) => (
@@ -68,6 +68,7 @@ function ServicesSection2() {
                   src={service.link}
                   alt={service.title}
                   className="w-full h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+                  loading="lazy"
                 />
               </div>
 
@@ -85,7 +86,7 @@ function ServicesSection2() {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
